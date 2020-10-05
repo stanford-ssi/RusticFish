@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cortex-debug",
+            "request": "launch",
+            "name": "Debug (OpenOCD)",
+            "servertype": "openocd",
+            "cwd": "${workspaceRoot}",
+            //"preLaunchTask": "cargo build",
+            "runToMain": true,
+            "executable": "./target/thumbv7em-none-eabihf/debug/examples/blinky_basic",
+            "configFiles": [
+                "interface/cmsis-dap.cfg",
+                "target/atsame5x.cfg"
+            ],
+            "svdFile": "${workspaceRoot}/ATSAME51J20A.svd",
+        }
+    ]
+}
